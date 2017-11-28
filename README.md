@@ -1,6 +1,6 @@
 # 介绍 #
 
-`它是一个基于SpringCloud的分布式服务示例项目、集成有eureka、ribbon、feign、hystrix组件等，消费端有JSP、freemarker、thymeleaf三个版本，同时集成了shiro、swagger2等，后面会接着完善`
+`这是一个基于SpringCloud的分布式服务示例项目、集成有eureka、ribbon、feign、hystrix组件等，消费端有JSP、freemarker、thymeleaf三个版本，同时集成了shiro、swagger2等，后面会接着完善`
 
 #### 包含工程有：
 * sc-commons：用于放common公共相关类的工程，所有工程都可以引用。
