@@ -1,0 +1,70 @@
+server:
+  port: 2000
+spring:
+  application:
+    name: provider
+  #cloud:
+    #config:
+      #server:
+        #git:
+          #uri: https://github.com/wangxinforme/sc/
+          #search-paths: sc-config #可以以,号分隔
+          #username: your account
+          #password: your password
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+
+#management:
+  #security:
+     #enabled: false
+
+logging:
+  config: classpath:conf/log4j2.xml
+
+druid:
+  datasource:
+    initialSize: 5
+    maxActive: 10
+    minIdle: 5
+    maxWait: 60000
+    useUnfairLock: true
+    testOnBorrow: false
+    testOnReturn: false
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    filters: stat,wall,log4j
+    url: jdbc:mysql://127.0.0.1:3306/bcis?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    driverClassName: com.mysql.jdbc.Driver
+    username: bcis
+    username: bcis
+    validationQuery: SELECT 1
+
+custom:
+  datasource:
+    names: db1,db2
+    db1:
+      url: jdbc:mysql://127.0.0.1:3306/bcis?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      driverClassName: com.mysql.jdbc.Driver
+      username: bcis
+      username: bcis
+      validationQuery: SELECT 1
+    db2:
+      url: jdbc:mysql://127.0.0.1:3306/bcis?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      driverClassName: com.mysql.jdbc.Driver
+      username: bcis
+      username: bcis
+      validationQuery: SELECT 1
+
+mybatis:
+  mapperLocations: classpath*:mapper/**/*.xml
+  typeAliasesPackage: com.zhengjing.api.model
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
